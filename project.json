@@ -1,0 +1,6 @@
+{
+  "name": "audience-platform-hubot",
+  "packaging": {
+    "type": "spec"
+  }
+}
