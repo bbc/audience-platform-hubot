@@ -53,6 +53,8 @@
     "test": "nyc --reporter=html --reporter=text mocha",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "test:smoke": "node src/**/*.js",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "spec": "speculate --release=${BUILD_NUMBER}",
+    "lint": "eslint scripts"
   }
 }
