@@ -1,0 +1,99 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Parameters": {
+    "Environment": {
+      "Type": "String",
+      "AllowedValues": ["test", "live"],
+      "Description": "Cosmos environments - skip Int, use Test or Live"
+    },
+    "PublicSubnet1Id": {
+      "Type": "String",
+      "Description": "The ID of Public Subnet 1"
+    },
+    "PublicSubnet2Id": {
+      "Type": "String",
+      "Description": "The ID of Public Subnet 2"
+    },
+    "PublicSubnet3Id": {
+      "Type": "String",
+      "Description": "The ID of Public Subnet 3"
+    },
+    "PrivateSubnet1Id": {
+      "Type": "String",
+      "Description": "The ID of Private Subnet 1"
+    },
+    "PrivateSubnet2Id": {
+      "Type": "String",
+      "Description": "The ID of Private Subnet 2"
+    },
+    "PrivateSubnet3Id": {
+      "Type": "String",
+      "Description": "The ID of Private Subnet 3"
+    },
+    "VpcId": {
+      "Type": "String",
+      "Description": "ID of the VPC to attach to"
+    },
+    "UpdateMinInService": {
+      "Default": "0",
+      "Type": "String",
+      "Description": "The minimum number of instances in service for Autoscaling updates"
+    },
+    "UpdateMaxBatchSize": {
+      "Default": "1",
+      "Type": "String",
+      "Description": "The maximum number of instances to be killed at one time during an ASG update."
+    },
+    "UpdatePauseTime": {
+      "Default": "PT0S",
+      "Type": "String",
+      "Description": "Waiting time for rolling updates to the Autoscaling Group"
+    },
+    "ImageId": {
+      "Type": "String",
+      "Description": "The AMI to use"
+    },
+    "MaxSize": {
+      "Default": "2",
+      "Type": "String",
+      "Description": "Maximum number of instances"
+    },
+    "MinSize": {
+      "Default": "1",
+      "Type": "String",
+      "Description": "Minimum number of instances"
+    },
+    "DesiredCapacity": {
+      "Default": "1",
+      "Type": "String",
+      "Description": "Desired number of instances"
+    },
+    "KeyName": {
+      "Type": "String",
+      "Default": "cosmos",
+      "Description": "The IAM keypair used to connect to instances"
+    },
+    "InstanceType": {
+      "Default": "t2.nano",
+      "Type": "String",
+      "Description": "The target instance type"
+    },
+    "CnameEntry": {
+      "Type": "String",
+      "Description": "Component CNAME entry"
+    },
+    "DomainNameBase": {
+      "Default": "tools.bbc.co.uk.",
+      "Type": "String",
+      "Description": "Base domain name (ending with a '.') under which new DNS entries are added"
+    },
+    "ComponentName": {
+      "Type": "String",
+      "Description": "The name of the Cosmos component"
+    },
+    "BastionAccessSecurityGroup": {
+      "Type": "String",
+      "Description": "The security group that allows access from the bastions"
+    }
+  }
+}

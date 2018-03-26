@@ -1,0 +1,28 @@
+{
+  "aws_account_id": "214729911032",
+  "main_stack": true,
+  "region": "eu-west-1",
+  "parameters": {
+    "ComponentName": "cops-hubot",
+    "BastionAccessSecurityGroup": "sg-9e6b43fb",
+    "CnameEntry": "hubot-cops",
+    "DomainNameBase": "0c91039c63a810b0.xhst.bbci.co.uk.",
+    "Environment": "test",
+    "ImageId": "ami-0525637c",
+    "PrivateSubnet1Id": "subnet-50871727",
+    "PrivateSubnet2Id": "subnet-61278d38",
+    "PrivateSubnet3Id": "subnet-f7b4dc92",
+    "PublicSubnet1Id": "subnet-51871726",
+    "PublicSubnet2Id": "subnet-6e278d37",
+    "PublicSubnet3Id": "subnet-f4b4dc91",
+    "VpcId": "vpc-bc44f8d9",
+    "MinSize": "1",
+    "MaxSize": "2",
+    "DesiredCapacity": "1",
+    "InstanceType": "t2.nano",
+    "KeyName": "cosmos",
+    "UpdateMaxBatchSize": "1",
+    "UpdateMinInService": "0",
+    "UpdatePauseTime": "PT0S"
+  }
+}

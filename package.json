@@ -1,27 +1,31 @@
 {
-  "name": "hubot",
-  "version": "0.0.0-development",
+  "name": "audience-platform-hubot",
+  "version": "1.0.0",
+  "private": true,
   "publishConfig": {
     "tag": "next"
   },
-  "author": "hubot",
+  "author": "AudiencePlatform-CentralOps@bbc.co.uk",
   "keywords": [
     "github",
     "hubot",
     "campfire",
     "bot"
   ],
-  "description": "A simple helpful robot for your Company",
+  "description": "Audience Platform ChatOps enablement bot layer",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hubotio/hubot.git"
+    "url": "https://github.com/bbc/audience-platform-hubot.git"
   },
   "dependencies": {
-    "async": ">=0.1.0 <1.0.0",
+    "async": "^2.1.4",
+    "bitly": "^4.1.1",
+    "cosmos-cli": "github:bbc/cosmos-cli",
+    "flashheart": "^2.2.1",
     "chalk": "^1.0.0",
     "cline": "^0.8.2",
-    "coffee-script": "1.6.3",
+    "coffee-script": "^1.10.0",
     "connect-multiparty": "^1.2.5",
     "cosmos-cli": "github:bbc/cosmos-cli",
     "express": "^3.21.2",
@@ -41,7 +45,10 @@
     "hubot-slack": "^4.4.0",
     "hubot-standup-alarm": "0.0.7",
     "hubot-thank-you": "0.0.3",
+    "lodash": "^4.13.1",
     "log": "1.4.0",
+    "moment": "^2.13.0",
+    "node-jenkins": "github:hjerling/node-jenkins",
     "optparse": "1.0.4",
     "scoped-http-client": "0.11.0"
   },
@@ -62,6 +69,24 @@
     "semantic-release": "^6.3.6",
     "speculate": "^1.6.0"
   },
+  "spec": {
+    "buildRequires": [
+      "python",
+      "http-parser"
+    ],
+    "prune": false,
+    "executable": [
+      "node_modules/hubot/bin",
+      "node_modules/cosmos-cli/lib/cli.js",
+      "node_modules/coffee-script/bin",
+      "bake-scripts"
+    ],
+    "post": [
+      "mkdir -p /etc/systemd/system/audience-platform-hubot.service.d",
+      "mv /usr/lib/audience-platform-hubot/environment.conf /etc/systemd/system/audience-platform-hubot.service.d/environment.conf",
+      "mv /usr/lib/audience-platform-hubot/bake-scripts /etc/bake-scripts/audience-platform-hubot"
+    ]
+  },
   "engines": {
     "node": "> 4.0.0",
     "npm": "> 2.0.0"
@@ -71,7 +96,7 @@
     "hubot": "./bin/hubot"
   },
   "scripts": {
-    "start": "bin/hubot --name hugh -a slack",
+    "start": "bin/hubot --name Hugh -a slack",
     "pretest": "standard",
     "test": "nyc --reporter=html --reporter=text mocha",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
