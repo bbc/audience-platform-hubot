@@ -9,7 +9,7 @@
   "keywords": [
     "github",
     "hubot",
-    "campfire",
+    "slack",
     "bot"
   ],
   "description": "Audience Platform ChatOps enablement bot layer",
