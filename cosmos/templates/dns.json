@@ -19,7 +19,7 @@
       "Description": "Domain to use with trailing dot (e.g. 'api.bbci.co.uk.', 'api.bbc.co.uk.' or 'api.bbc.com.')."
     },
     "Backend": {
-      "Default": "cops-hubot.0c91039c63a810b0.xhst.bbci.co.uk",
+      "Default": "hubot-cops.0c91039c63a810b0.xhst.bbci.co.uk",
       "Type": "String",
       "Description": "Backend hostname for your component (e.g. '[component-name].[env.]account-identifier.xhst.bbci.co.uk')."
     }

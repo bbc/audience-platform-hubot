@@ -83,7 +83,6 @@
       "Description": "Component CNAME entry"
     },
     "DomainNameBase": {
-      "Default": "tools.bbc.co.uk.",
       "Type": "String",
       "Description": "Base domain name (ending with a '.') under which new DNS entries are added"
     },

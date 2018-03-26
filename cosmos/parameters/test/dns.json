@@ -1,0 +1,11 @@
+{
+  "aws_account_id": "511603603783",
+  "main_stack": false,
+  "region": "eu-west-1",
+  "parameters": {
+    "Backend": "hubot-cops.0c91039c63a810b0.xhst.bbci.co.uk",
+    "ComponentName": "cops-hubot",
+    "Environment": ".test.",
+    "HostedZoneName": "tools.bbc.co.uk."
+  }
+}
