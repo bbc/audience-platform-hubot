@@ -1,20 +1,23 @@
-[![Build Status](https://travis-ci.org/hubotio/hubot.svg?branch=master)](https://travis-ci.org/hubotio/hubot) [![Coverage Status](https://coveralls.io/repos/github/hubotio/hubot/badge.svg?branch=master)](https://coveralls.io/github/hubotio/hubot?branch=master)
+# Audience Platform Hubot
+We spend a lot of our time in [Slack](https://slack.com), so why not make that the place to get Ops tasks done?
+Enter Hubot, GitHub's customisable life embetterment robot.
 
-# Hubot
+# Building Audience Platform Hubot
+In Jenkins, checkout this repo, and use `execute shell` to execute the build.
+Your build script should look like this:
 
-Hubot is a framework to build chat bots, modeled after GitHub's Campfire bot of the same name, hubot.
-He's pretty cool. He's [extendable with scripts](http://hubot.github.com/docs/#scripts) and can work
-on [many different chat services](https://hubot.github.com/docs/adapters/).
+```
+set +x
+export COSMOS_CERT=/etc/pki/tls/private/client_crt_key.pem
+export COSMOS_CERT_KEY=/etc/pki/tls/private/client.key
+export COSMOS_TIMEOUT=240000
 
-This repository provides a library that's distributed by `npm` that you
-use for building your own bots.  See the [documentation](http://hubot.github.com/docs)
-for details on getting up and running with your very own robot friend.
-
-In most cases, you'll probably never have to hack on this repo directly if you
-are building your own bot. But if you do, check out [CONTRIBUTING.md](CONTRIBUTING.md)
-
-If you'd like to chat with Hubot users and developers, [join us on Slack](https://hubot-slackin.herokuapp.com/).
-
-## License
-
-See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
+sed -i 's/audience-platform/YOUR-PROJECT/g' project.json package.json
+sed -i 's/Hugh/YOUR-ROBOTS-NAME/g' package.json
+component="YOUR-PROJECT-hubot"
+npm install
+npm test
+npm run lint
+npm run spec
+cosmos-build --os=centos7
+```

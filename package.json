@@ -14,10 +14,6 @@
   ],
   "description": "Audience Platform ChatOps enablement bot layer",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bbc/audience-platform-hubot.git"
-  },
   "dependencies": {
     "async": "^2.1.4",
     "bitly": "^4.1.1",
