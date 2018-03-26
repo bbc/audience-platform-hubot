@@ -21,3 +21,6 @@ npm run lint
 npm run spec
 cosmos-build --os=centos7
 ```
+
+* YOUR-PROJECT would be something like `uas`, `recs`, `idbe`, etc
+* YOUR-ROBOTS-NAME is anything you want it to be. By default, Hubot will name itself Hugh after [a Borg](https://en.wikipedia.org/wiki/I,_Borg), but you can choose any name you want. iPlayer call theirs [Mr Meeseeks](https://en.wikipedia.org/wiki/Meeseeks_and_Destroy), so that's taken.
